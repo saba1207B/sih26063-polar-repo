@@ -5,23 +5,24 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui";
-import { Menu, X, Compass, Sparkles, Languages, Eye, Compass as PolarCompass } from "lucide-react";
+import { Sparkles, Languages, Eye, Compass as PolarCompass, Menu, X } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const navLinks = [
-  { label: "Explore", href: "/explore" },
-  { label: "Expeditions", href: "/expeditions" },
-  { label: "Research", href: "/research" },
-  { label: "Datasets", href: "/datasets" },
-  { label: "Publications", href: "/publications" },
-  { label: "Media", href: "/media" },
-  { label: "Learn", href: "/learn" },
+  { key: "nav_explore", labelEn: "Explore", labelHi: "अन्वेषण", href: "/explore" },
+  { key: "nav_expeditions", labelEn: "Expeditions", labelHi: "अभियान", href: "/expeditions" },
+  { key: "nav_research", labelEn: "Research", labelHi: "अनुसंधान", href: "/research" },
+  { key: "nav_datasets", labelEn: "Datasets", labelHi: "डेटासेट", href: "/datasets" },
+  { key: "nav_publications", labelEn: "Publications", labelHi: "प्रकाशन", href: "/publications" },
+  { key: "nav_media", labelEn: "Media", labelHi: "मीडिया", href: "/media" },
+  { key: "nav_learn", labelEn: "Learn", labelHi: "शिक्षा", href: "/learn" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [language, setLanguage] = useState<"EN" | "HI">("EN");
   const [highContrast, setHighContrast] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -62,20 +63,24 @@ export function Navbar() {
             <div className="flex items-center gap-2 truncate">
               <span className="inline-block w-2 h-2 rounded-full bg-[#0284C7] shrink-0 animate-pulse" />
               <span className="font-semibold tracking-wider text-sky-100 truncate">
-                भारत सरकार • राष्ट्रीय ध्रुवीय अनुसंधान | INDIAN POLAR SCIENCE ARCHIVE & OUTREACH
+                {t('gov_title', 'भारत सरकार • राष्ट्रीय ध्रुवीय अनुसंधान | INDIAN POLAR SCIENCE ARCHIVE & OUTREACH')}
               </span>
             </div>
 
-            <div className="flex items-center gap-4 shrink-0">
-              {/* Bilingual Switcher */}
+            <div className="flex items-center gap-3 shrink-0">
+              {/* Bilingual Switcher Button */}
               <button
                 type="button"
-                onClick={() => setLanguage(language === "EN" ? "HI" : "EN")}
-                className="flex items-center gap-1.5 px-2 py-0.5 rounded border border-white/20 hover:border-sky-300 hover:text-sky-200 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-sky-400"
+                id="language-translator-toggle"
+                onClick={toggleLanguage}
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-sky-400/40 bg-sky-950/60 hover:bg-sky-900/80 hover:border-sky-300 text-sky-100 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 cursor-pointer shadow-xs"
                 aria-label={`Switch language to ${language === "EN" ? "Hindi" : "English"}`}
+                title={`Click to switch to ${language === "EN" ? "Hindi (हिन्दी)" : "English"}`}
               >
-                <Languages size={12} className="text-sky-300" />
-                <span className="font-bold">{language === "EN" ? "हिन्दी" : "EN"}</span>
+                <Languages size={13} className="text-sky-300" />
+                <span className="font-bold text-xs tracking-wide">
+                  {language === "EN" ? "हिन्दी" : "English"}
+                </span>
               </button>
 
               {/* Accessibility Quick Toggle */}
@@ -122,10 +127,10 @@ export function Navbar() {
               </div>
               <div className="flex flex-col">
                 <span className="text-base font-extrabold tracking-wider uppercase text-[#0A2B33]">
-                  POLAR COMMONS
+                  {t('brand_title', 'POLAR COMMONS')}
                 </span>
                 <span className="text-[10px] font-mono tracking-widest text-[#0891B2] uppercase -mt-0.5 font-semibold">
-                  India's Polar Science Gateway
+                  {t('brand_subtitle', "India's Polar Science Gateway")}
                 </span>
               </div>
             </Link>
@@ -136,46 +141,43 @@ export function Navbar() {
                 const isActive =
                   pathname === link.href ||
                   (link.href !== "/" && pathname.startsWith(link.href + "/"));
+                const label = language === "HI" ? link.labelHi : link.labelEn;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    aria-current={isActive ? "page" : undefined}
                     className={cn(
                       "relative px-3.5 py-2 text-xs font-semibold tracking-wider uppercase transition-all duration-200 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0891B2] min-h-[40px] flex items-center",
                       isActive
-                        ? "text-[#0C5A66] bg-teal-50 font-bold shadow-xs"
+                        ? "text-[#0891B2] bg-teal-50/80 font-bold"
                         : "text-[#1E3E47] hover:text-[#0891B2] hover:bg-slate-50"
                     )}
                   >
-                    {link.label}
-                    {isActive && (
-                      <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-gradient-to-r from-[#0891B2] to-[#E5983A]" />
-                    )}
+                    {label}
                   </Link>
                 );
               })}
             </nav>
 
-            {/* Desktop Assistant CTA Action */}
+            {/* Action Button: AI Research Assistant */}
             <div className="hidden lg:flex items-center gap-3">
               <Link href="/assistant">
                 <Button
                   variant="primary"
                   size="sm"
-                  className="gap-2 shadow-sm font-semibold tracking-wider text-xs px-4 min-h-[40px]"
+                  className="gap-2 shadow-sm font-semibold tracking-wider text-xs px-4 min-h-[40px] bg-[#0C5A66] hover:bg-[#0891B2] border-[#073842]"
                 >
                   <Sparkles size={14} className="text-sky-200 animate-pulse" />
-                  Ask Assistant
+                  {t('nav_assistant', 'Ask Assistant')}
                 </Button>
               </Link>
             </div>
 
-            {/* Mobile Menu Toggle Button */}
+            {/* Mobile Hamburger Button */}
             <button
               type="button"
-              className="lg:hidden p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center text-[#0B1E36] hover:text-[#0284C7] transition-colors rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0284C7]"
               onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center text-[#0B1E36] hover:text-[#0284C7] transition-colors rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0284C7]"
               aria-expanded={mobileOpen}
               aria-controls="mobile-navigation-overlay"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -186,26 +188,27 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Menu Accessible Drawer */}
+      {/* Accessible Mobile Menu Modal */}
       <div
         id="mobile-navigation-overlay"
         aria-hidden={!mobileOpen}
         className={cn(
           "fixed inset-0 z-40 lg:hidden transition-all duration-300",
           mobileOpen
-            ? "opacity-100 pointer-events-auto bg-[#0B1E36]/70 backdrop-blur-xl"
+            ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         )}
       >
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 bg-[#0B1E36]/40 backdrop-blur-sm"
           onClick={() => setMobileOpen(false)}
         />
-
         <div
           className={cn(
             "absolute top-24 left-4 right-4 bg-white border border-[#0284C7]/20 rounded-3xl p-6 shadow-2xl transition-all duration-300 flex flex-col gap-4 max-h-[80vh] overflow-y-auto",
-            mobileOpen ? "translate-y-0 scale-100" : "-translate-y-4 scale-95"
+            mobileOpen
+              ? "translate-y-0 scale-100 opacity-100"
+              : "-translate-y-4 scale-95 opacity-0"
           )}
         >
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -227,20 +230,20 @@ export function Navbar() {
               const isActive =
                 pathname === link.href ||
                 (link.href !== "/" && pathname.startsWith(link.href + "/"));
+              const label = language === "HI" ? link.labelHi : link.labelEn;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  aria-current={isActive ? "page" : undefined}
                   className={cn(
                     "text-sm font-semibold tracking-wider uppercase px-4 py-3 min-h-[44px] flex items-center rounded-xl transition-colors",
                     isActive
-                      ? "bg-sky-50 text-[#0284C7] font-bold border border-sky-200"
+                      ? "text-[#0284C7] bg-[#F0F9FF] font-bold"
                       : "text-slate-700 hover:bg-slate-50 hover:text-[#0284C7]"
                   )}
                 >
-                  {link.label}
+                  {label}
                 </Link>
               );
             })}
@@ -249,16 +252,17 @@ export function Navbar() {
           <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
             <Link href="/assistant" onClick={() => setMobileOpen(false)}>
               <Button variant="primary" size="md" className="w-full gap-2 text-xs min-h-[44px]">
-                <Sparkles size={16} /> Ask Research Assistant
+                <Sparkles size={16} /> {t('nav_assistant', 'Ask Research Assistant')}
               </Button>
             </Link>
-            <div className="flex items-center justify-between text-xs text-slate-500 font-mono px-2 pt-1">
-              <span>LANGUAGE:</span>
+            <div className="flex items-center justify-between text-xs text-slate-700 font-mono px-2 pt-2 bg-slate-50 rounded-xl p-2">
+              <span className="font-semibold">LANGUAGE / भाषा:</span>
               <button
                 type="button"
-                onClick={() => setLanguage(language === "EN" ? "HI" : "EN")}
-                className="text-[#0284C7] font-bold hover:underline"
+                onClick={toggleLanguage}
+                className="text-[#0284C7] font-bold hover:underline flex items-center gap-1.5"
               >
+                <Languages size={14} />
                 {language === "EN" ? "SWITCH TO हिन्दी" : "SWITCH TO ENGLISH"}
               </button>
             </div>

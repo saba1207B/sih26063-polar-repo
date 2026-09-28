@@ -9,8 +9,12 @@ import { SnowParticles } from '@/components/SnowParticles';
 import { AnimatedSection, AnimatedGrid } from '@/components/AnimatedSection';
 import { PageBackground } from '@/components/PageBackground';
 
+import { useLanguage } from '@/context/LanguageContext';
+
 export default function LearnPage() {
-  const [lang, setLang] = useState<'English' | 'Hindi'>('English');
+  const { language, setLanguage } = useLanguage();
+  const lang = language === 'HI' ? 'Hindi' : 'English';
+  const setLang = (target: 'English' | 'Hindi') => setLanguage(target === 'Hindi' ? 'HI' : 'EN');
   const [audienceFilter, setAudienceFilter] = useState<'All' | 'Students' | 'Teachers' | 'Everyone'>('All');
 
   const filteredContent = mockEducationalContent.filter((item) =>

@@ -7,14 +7,22 @@ import { Expedition } from "@/types";
 import { ArrowUpRight, MapPin, Calendar, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 interface ExpeditionCardProps {
   expedition: Expedition;
   index: number;
 }
 
 export function ExpeditionCard({ expedition, index }: ExpeditionCardProps) {
+  const { language } = useLanguage();
   const cardBorderClass = "rounded-[28px] sm:rounded-[36px]";
   const imageBorderClass = "rounded-2xl sm:rounded-3xl";
+
+  const displayDescription =
+    language === "HI" && expedition.hindiSummary
+      ? expedition.hindiSummary
+      : expedition.description;
 
   return (
     <Link
@@ -79,7 +87,7 @@ export function ExpeditionCard({ expedition, index }: ExpeditionCardProps) {
 
         {/* Description / Summary */}
         <p className="text-sm text-slate-600 leading-relaxed line-clamp-3 mb-6 font-normal">
-          {expedition.description}
+          {displayDescription}
         </p>
 
         {/* Research Focus / Activities */}

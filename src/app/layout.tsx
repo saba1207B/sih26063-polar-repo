@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 import { OfflineDemoBanner } from "@/components/OfflineDemoBanner";
 import { SnowParticles } from "@/components/SnowParticles";
+import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 
 const inter = Inter({
@@ -50,14 +51,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           <SnowParticles count={25} className="absolute inset-0" />
         </div>
-        <OfflineDemoBanner />
-        <SmoothScrollProvider>
-          <Navbar />
-          <main id="main-content" className="flex-1 relative z-10" tabIndex={-1}>
-            {children}
-          </main>
-          <Footer />
-        </SmoothScrollProvider>
+        <LanguageProvider>
+          <OfflineDemoBanner />
+          <SmoothScrollProvider>
+            <Navbar />
+            <main id="main-content" className="flex-1 relative z-10" tabIndex={-1}>
+              {children}
+            </main>
+            <Footer />
+          </SmoothScrollProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

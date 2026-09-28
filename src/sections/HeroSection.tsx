@@ -4,21 +4,17 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui";
+import { useLanguage } from "@/context/LanguageContext";
 
 /**
- * HeroSection — Bright Antarctic Science Experience.
- *
- * Features:
- * - Real Antarctic photography with bright natural exposure
- * - Subtle, realistic snowfall particle layer
- * - Frosted glass UI framing with high-contrast polar slate typography
- * - Responsive clamp() typography and masked text reveals
+ * HeroSection — Bright Antarctic Science Experience with Bilingual Support.
  */
 export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
   const bgLayerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const t = setTimeout(() => setIsMounted(true), 100);
@@ -63,7 +59,7 @@ export function HeroSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const transitionStr = "transform 1s cubic-bezier(0.16, 1, 0.3, 1)";
+  const transitionStr = "transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1)";
 
   return (
     <section
@@ -71,22 +67,16 @@ export function HeroSection() {
       className="relative w-full min-h-[92vh] flex flex-col justify-end overflow-hidden pb-12 sm:pb-24 pt-32"
       aria-label="Hero — Polar Science Knowledge Repository"
     >
-      {/* ── Real Antarctic Photography (Subtle Parallax) ── */}
-      <div
-        ref={bgLayerRef}
-        className="absolute inset-0 z-0 will-change-transform"
-        aria-hidden="true"
-      >
+      {/* ── Background Photographic Layer ── */}
+      <div ref={bgLayerRef} className="absolute inset-0 z-0 will-change-transform" aria-hidden="true">
         <Image
           src="/images/ice-canyon-stream-4k.jpg"
           alt="Cinematic 4K glacial valley with evaporating mist and water flowing between towering ice mountains"
           fill
-          className="object-cover object-center brightness-105 contrast-105"
           priority
-          quality={95}
           sizes="100vw"
+          className="object-cover object-center brightness-105 contrast-105"
         />
-        {/* Luminous Glacial Frosted Vignette for Crisp Typography Contrast while keeping ice canyon clear */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/85 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0B1E36]/75 via-[#0B1E36]/25 to-transparent" />
       </div>
@@ -108,12 +98,16 @@ export function HeroSection() {
               }}
             >
               <span className="bg-[#0891B2]/50 text-white px-2.5 py-0.5 rounded-full border border-cyan-300/40 text-[11px]">
-                INDIAN POLAR & OCEAN RESEARCH
+                {t('hero_badge', 'INDIAN POLAR & OCEAN RESEARCH')}
               </span>
               <span className="w-4 h-px bg-white/40" />
-              <span className="text-white text-[11px]">EXPEDITIONS • RESEARCH • DATA</span>
+              <span className="text-white text-[11px]">
+                {t('hero_tagline', 'EXPEDITIONS • RESEARCH • DATA')}
+              </span>
               <span className="w-4 h-px bg-white/40 hidden sm:inline" />
-              <span className="text-[#FBBF24] text-[11px] hidden sm:inline font-mono font-bold">COASTAL TO POLE</span>
+              <span className="text-[#FBBF24] text-[11px] hidden sm:inline font-mono font-bold">
+                {t('hero_subtag', 'COASTAL TO POLE')}
+              </span>
             </div>
           </div>
 
@@ -129,7 +123,7 @@ export function HeroSection() {
                   transitionDelay: "0.2s",
                 }}
               >
-                EXPLORE THE
+                {t('hero_title_1', 'EXPLORE THE')}
               </span>
             </div>
             <div className="overflow-hidden">
@@ -142,7 +136,7 @@ export function HeroSection() {
                   transitionDelay: "0.3s",
                 }}
               >
-                POLAR FRONTIER
+                {t('hero_title_2', 'POLAR FRONTIER')}
               </span>
             </div>
           </h1>
@@ -157,7 +151,7 @@ export function HeroSection() {
                 transitionDelay: "0.4s",
               }}
             >
-              Discover India's scientific expeditions, oceanographic datasets, ice core palaeoclimate records, and peer-reviewed literature unified through one modern digital science gateway.
+              {t('hero_desc', "Discover India's scientific expeditions, oceanographic datasets, ice core palaeoclimate records, and peer-reviewed literature unified through one modern digital science gateway.")}
             </p>
           </div>
 
@@ -173,17 +167,17 @@ export function HeroSection() {
             >
               <Link href="/explore">
                 <Button variant="primary" size="lg" className="w-full sm:w-auto bg-[#0891B2] hover:bg-[#0C5A66] text-white border-transparent shadow-lg text-xs font-bold tracking-wider">
-                  EXPLORE POLAR SCIENCE →
+                  {t('hero_cta_explore', 'EXPLORE POLAR SCIENCE →')}
                 </Button>
               </Link>
               <Link href="/assistant">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto bg-white/20 hover:bg-white text-white hover:text-[#0A2B33] border-white/50 shadow-md text-xs font-bold tracking-wider">
-                  ASK RESEARCH ASSISTANT
+                  {t('hero_cta_assistant', 'ASK RESEARCH ASSISTANT')}
                 </Button>
               </Link>
               <Link href="/expeditions" className="sm:ml-auto">
                 <span className="text-xs text-sky-200 hover:text-white font-mono uppercase tracking-wider underline flex items-center justify-center gap-1 min-h-[44px]">
-                  View 42 Expeditions →
+                  {t('hero_cta_expeditions', 'View 42 Expeditions →')}
                 </span>
               </Link>
             </div>

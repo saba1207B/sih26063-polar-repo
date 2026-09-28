@@ -26,6 +26,8 @@ import {
   Sparkles,
 } from 'lucide-react';
 
+import { useLanguage } from '@/context/LanguageContext';
+
 interface ExpeditionDetailClientProps {
   slug?: string;
 }
@@ -33,10 +35,17 @@ interface ExpeditionDetailClientProps {
 export default function ExpeditionDetailClient({ slug: propSlug }: ExpeditionDetailClientProps) {
   const params = useParams();
   const slug = propSlug || (params?.slug as string);
+  const { language } = useLanguage();
 
   const [expedition, setExpedition] = useState<Expedition | null>(null);
-  const [activeTab, setActiveTab] = useState<'english' | 'hindi'>('english');
+  const [activeTab, setActiveTab] = useState<'english' | 'hindi'>(
+    language === 'HI' ? 'hindi' : 'english'
+  );
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setActiveTab(language === 'HI' ? 'hindi' : 'english');
+  }, [language]);
 
   useEffect(() => {
     async function loadData() {
