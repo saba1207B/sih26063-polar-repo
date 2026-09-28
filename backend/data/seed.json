@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "title": "Illustrative Maitri 2023 Climate Expedition demo graph",
+    "disclaimer": "All expedition measurements, people, publications and repository records in this seed are fictional-but-realistic and must not be treated as scientific evidence.",
+    "generatedAt": "2026-09-28",
+    "schemaVersion": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "exp-maitri-2023",
+      "type": "Expedition",
+      "slug": "maitri-2023-climate-expedition",
+      "title": "Maitri 2023 Climate Connections Expedition",
+      "eyebrow": "Illustrative Indian Antarctic expedition",
+      "year": 2023,
+      "reviewStatus": "Human-reviewed demo",
+      "reviewDetail": "A simulated educator review checked the plain-language reading level, glossary links, Hindi copy and correspondence between narrative claims and graph paths. It is not scientific peer review.",
+      "plainLanguageSummary": "A small Indian research team spent the Antarctic summer near Maitri station following a simple question: how do air, ice, lakes and human activity connect? They measured carbon exchange, sea-ice change, weather and traces of microplastics. This demo connects each explanation to the dataset or publication node that supports it.",
+      "hindiSummary": "एक भारतीय अनुसंधान दल ने मैत्री स्टेशन के पास अंटार्कटिक ग्रीष्मकाल में यह समझने का प्रयास किया कि हवा, बर्फ, झीलें और मानवीय गतिविधियाँ आपस में कैसे जुड़ी हैं। दल ने कार्बन के आदान-प्रदान, समुद्री बर्फ में बदलाव, मौसम और सूक्ष्म प्लास्टिक के निशानों का अध्ययन किया। यह प्रदर्शन हर सरल व्याख्या को उससे जुड़े डेटासेट या प्रकाशन से जोड़ता है।"
+    },
+    {"id":"research-carbon","type":"ResearchActivity","title":"Atmosphere–snow carbon exchange","summary":"Hourly chamber and mast observations of carbon exchange."},
+    {"id":"research-ice","type":"ResearchActivity","title":"Seasonal sea-ice observation","summary":"Repeat transects describing thickness, freeboard and surface condition."},
+    {"id":"research-weather","type":"ResearchActivity","title":"Maitri weather watch","summary":"A teaching-ready subset of automatic weather station observations."},
+    {"id":"research-plastic","type":"ResearchActivity","title":"Freshwater microplastic screening","summary":"Quality-controlled counts from illustrative lake-water samples."},
+
+    {"id":"dataset-carbon","type":"Dataset","title":"Carbon dioxide flux above coastal snow","summary":"Hourly illustrative carbon dioxide exchange observations show how wind and sunlight can change whether the snow surface appears to absorb or release CO₂.","concepts":["carbon dioxide flux"],"researchLabel":"Atmosphere–snow carbon exchange","temporalCoverage":"2023-01-04/2023-02-16","license":"CC BY 4.0"},
+    {"id":"dataset-ice","type":"Dataset","title":"Sea-ice thickness transects near Maitri","summary":"Repeat illustrative transects record snow depth, ice thickness and visible surface features along a fixed route.","concepts":["sea ice"],"researchLabel":"Seasonal sea-ice observation","temporalCoverage":"2023-01-08/2023-02-11","license":"CC BY 4.0"},
+    {"id":"dataset-weather","type":"Dataset","title":"Maitri summer weather observations","summary":"Ten-minute illustrative observations of air temperature, pressure, wind and solar radiation provide context for the field studies.","concepts":["weather","temperature"],"researchLabel":"Maitri weather watch","temporalCoverage":"2023-01-01/2023-02-28","license":"CC0 1.0"},
+    {"id":"dataset-plastic","type":"Dataset","title":"Microplastic screening in Schirmacher lakes","summary":"Illustrative polymer-screening results show how blanks, contamination controls and uncertainty matter when interpreting very small particle counts.","concepts":["microplastics"],"researchLabel":"Freshwater microplastic screening","temporalCoverage":"2023-01-14/2023-02-03","license":"CC BY 4.0"},
+
+    {"id":"publication-carbon","type":"Publication","title":"Connecting wind and light to apparent snow–air carbon exchange near Maitri","year":2024,"authors":["Dr Ananya Rao","Dr Kabir Sen"],"researchLabel":"Atmosphere–snow carbon exchange","abstract":"Illustrative publication record for demonstrating provenance."},
+    {"id":"publication-ice","type":"Publication","title":"A repeatable classroom view of coastal Antarctic sea ice","year":2024,"authors":["Dr Kabir Sen","Meera Joseph"],"researchLabel":"Seasonal sea-ice observation","abstract":"Illustrative publication record for demonstrating provenance."},
+    {"id":"publication-plastic","type":"Publication","title":"Why contamination controls matter in Antarctic microplastic screening","year":2024,"authors":["Meera Joseph","Dr Ananya Rao"],"researchLabel":"Freshwater microplastic screening","abstract":"Illustrative publication record for demonstrating provenance."},
+
+    {"id":"person-rao","type":"Person","name":"Dr Ananya Rao","role":"Atmospheric scientist (fictional demo person)"},
+    {"id":"person-sen","type":"Person","name":"Dr Kabir Sen","role":"Cryosphere scientist (fictional demo person)"},
+    {"id":"person-joseph","type":"Person","name":"Meera Joseph","role":"Graduate researcher (fictional demo person)"},
+
+    {"id":"location-maitri","type":"Location","name":"Maitri research station","latitude":-70.7667,"longitude":11.7333,"concept":"Antarctic research station","disambiguation":"This is Maitri, India's Antarctic research station—not a person or the Sanskrit word for friendship.","alt":"Map marker for Maitri research station in the Schirmacher Oasis, Antarctica"},
+    {"id":"location-lake","type":"Location","name":"Lake Priyadarshini study point","latitude":-70.7682,"longitude":11.7210,"concept":"Schirmacher Oasis freshwater lake","disambiguation":"A freshwater field location near Maitri, distinct from similarly named places in India.","alt":"Map marker for the illustrative Lake Priyadarshini study point"},
+    {"id":"location-transect","type":"Location","name":"Coastal sea-ice transect","latitude":-70.6950,"longitude":11.8200,"concept":"Seasonal sea-ice observation route","disambiguation":"A demo observation route, not a permanent station.","alt":"Map marker for the illustrative coastal sea-ice transect"},
+
+    {"id":"media-1","type":"MediaAsset","title":"Blue-ice approach","alt":"Stylised blue Antarctic ice ridges beneath a pale sky","localPath":"/media/blue-ice.svg","checksum":"sha256:3b68cce538f8493a17137fc6c8b8c5e4923859e295393c9e3fd930fd8ca4f7c5","license":"CC0 1.0 — original demo illustration"},
+    {"id":"media-2","type":"MediaAsset","title":"Maitri field camp","alt":"Stylised orange polar shelter beside scientific instruments","localPath":"/media/field-camp.svg","checksum":"sha256:506b1eab3776ca4638650c315db5f33eb49ab774eba3e5829ef2065ea98486b9","license":"CC0 1.0 — original demo illustration"},
+    {"id":"media-3","type":"MediaAsset","title":"Sea-ice transect","alt":"Stylised researchers following a marked route across sea ice","localPath":"/media/sea-ice.svg","checksum":"sha256:f06e136c0273452130622c9be88f83089898f1ce776fd302470354e564145aef","license":"CC0 1.0 — original demo illustration"},
+    {"id":"media-4","type":"MediaAsset","title":"Weather mast","alt":"Stylised weather mast recording wind above snow","localPath":"/media/weather-mast.svg","checksum":"sha256:88f167ee08d00b391e14858947bb6ca535213a3109acfbdf0591f7de2bf60b54","license":"CC0 1.0 — original demo illustration"},
+    {"id":"media-5","type":"MediaAsset","title":"Lake sampling","alt":"Stylised gloved hand holding a sample bottle near an Antarctic lake","localPath":"/media/lake-sampling.svg","checksum":"sha256:19f73f526a5c27086384dc44c49b2402a44755caa41222e0b1cadc582fa9a970","license":"CC0 1.0 — original demo illustration"},
+
+    {"id":"education-story","type":"EducationalContent","title":"Air, ice and water: one connected Antarctic story","plainLanguageSummary":"Weather influences the surface conditions researchers observe, so the graph keeps measurements connected instead of presenting isolated catalogue entries.","hindiSummary":"मौसम उन सतही परिस्थितियों को प्रभावित करता है जिन्हें शोधकर्ता देखते हैं, इसलिए यह ग्राफ मापों को अलग-अलग सूची की तरह दिखाने के बजाय आपस में जोड़कर रखता है।","glossaryTerms":["carbon flux","cryosphere","transect","microplastic","provenance","freeboard","albedo"]},
+    {"id":"concept-carbon","type":"Concept","label":"carbon dioxide flux","aliases":["co2 flux","carbon flux","carbon exchange"]},
+    {"id":"concept-seaice","type":"Concept","label":"sea ice","aliases":["ocean ice","seasonal ice"]},
+    {"id":"concept-station","type":"Concept","label":"Antarctic research station","aliases":["Maitri station"]},
+
+    {"id":"source-carbon","type":"SourceRecord","recordId":"DEMO-NPDC-D3","repository":"NPDC","landingUrl":"https://npdc.ncpor.res.in/","doi":"","license":"CC BY 4.0","lastCheckedAt":"2026-09-28T08:30:00Z","checkStatus":"ok"},
+    {"id":"source-ice","type":"SourceRecord","recordId":"DEMO-PANGAEA-D4","repository":"PANGAEA","landingUrl":"https://www.pangaea.de/","doi":"10.1594/PANGAEA.946401","license":"CC BY 4.0","lastCheckedAt":"2026-09-28T08:30:00Z","checkStatus":"ok"},
+    {"id":"source-weather","type":"SourceRecord","recordId":"DEMO-AADC-D5","repository":"AADC","landingUrl":"https://data.aad.gov.au/","doi":"","license":"CC0 1.0","lastCheckedAt":null,"checkStatus":"unverified-offline"},
+    {"id":"source-plastic","type":"SourceRecord","recordId":"DEMO-NPDC-D6","repository":"NPDC","landingUrl":"https://npdc.ncpor.res.in/old-record-demo","doi":"","license":"CC BY 4.0","lastCheckedAt":"2026-09-28T08:30:00Z","checkStatus":"archived-copy-available"},
+    {"id":"source-pub-carbon","type":"SourceRecord","recordId":"DEMO-PUB-P1","repository":"NPDC","landingUrl":"https://npdc.ncpor.res.in/","doi":"","license":"CC BY 4.0","lastCheckedAt":"2026-09-28T08:30:00Z","checkStatus":"ok"},
+    {"id":"source-pub-ice","type":"SourceRecord","recordId":"DEMO-PUB-P2","repository":"PANGAEA","landingUrl":"https://www.pangaea.de/","doi":"","license":"CC BY 4.0","lastCheckedAt":"2026-09-28T08:30:00Z","checkStatus":"ok"},
+    {"id":"source-pub-plastic","type":"SourceRecord","recordId":"DEMO-PUB-P3","repository":"NPDC","landingUrl":"https://npdc.ncpor.res.in/old-record-demo","doi":"","license":"CC BY 4.0","lastCheckedAt":"2026-09-28T08:30:00Z","checkStatus":"archived-copy-available"}
+  ],
+  "edges": [
+    {"from":"exp-maitri-2023","type":"CONDUCTED","to":"research-carbon"},{"from":"exp-maitri-2023","type":"CONDUCTED","to":"research-ice"},{"from":"exp-maitri-2023","type":"CONDUCTED","to":"research-weather"},{"from":"exp-maitri-2023","type":"CONDUCTED","to":"research-plastic"},
+    {"from":"research-carbon","type":"PRODUCED","to":"dataset-carbon"},{"from":"research-ice","type":"PRODUCED","to":"dataset-ice"},{"from":"research-weather","type":"PRODUCED","to":"dataset-weather"},{"from":"research-plastic","type":"PRODUCED","to":"dataset-plastic"},
+    {"from":"research-carbon","type":"PUBLISHED_IN","to":"publication-carbon"},{"from":"research-ice","type":"PUBLISHED_IN","to":"publication-ice"},{"from":"research-plastic","type":"PUBLISHED_IN","to":"publication-plastic"},
+    {"from":"exp-maitri-2023","type":"OPERATED_AT","to":"location-maitri"},{"from":"exp-maitri-2023","type":"OPERATED_AT","to":"location-lake"},{"from":"exp-maitri-2023","type":"OPERATED_AT","to":"location-transect"},
+    {"from":"publication-carbon","type":"AUTHORED_BY","to":"person-rao"},{"from":"publication-carbon","type":"AUTHORED_BY","to":"person-sen"},{"from":"publication-ice","type":"AUTHORED_BY","to":"person-sen"},{"from":"publication-ice","type":"AUTHORED_BY","to":"person-joseph"},{"from":"publication-plastic","type":"AUTHORED_BY","to":"person-joseph"},{"from":"publication-plastic","type":"AUTHORED_BY","to":"person-rao"},
+    {"from":"person-rao","type":"PARTICIPATED_IN","to":"exp-maitri-2023"},{"from":"person-sen","type":"PARTICIPATED_IN","to":"exp-maitri-2023"},{"from":"person-joseph","type":"PARTICIPATED_IN","to":"exp-maitri-2023"},
+    {"from":"exp-maitri-2023","type":"HAS_MEDIA","to":"media-1"},{"from":"exp-maitri-2023","type":"HAS_MEDIA","to":"media-2"},{"from":"exp-maitri-2023","type":"HAS_MEDIA","to":"media-3"},{"from":"exp-maitri-2023","type":"HAS_MEDIA","to":"media-4"},{"from":"exp-maitri-2023","type":"HAS_MEDIA","to":"media-5"},
+    {"from":"dataset-carbon","type":"DEPICTED_IN","to":"media-2"},{"from":"dataset-ice","type":"DEPICTED_IN","to":"media-3"},{"from":"dataset-weather","type":"DEPICTED_IN","to":"media-4"},{"from":"dataset-plastic","type":"DEPICTED_IN","to":"media-5"},
+    {"from":"exp-maitri-2023","type":"HAS_EDUCATIONAL","to":"education-story"},{"from":"education-story","type":"EXPLAINS","to":"concept-carbon"},{"from":"education-story","type":"EXPLAINS","to":"concept-seaice"},{"from":"education-story","type":"EXPLAINS","to":"concept-station"},
+    {"from":"concept-carbon","type":"DESCRIBES","to":"dataset-carbon"},{"from":"concept-seaice","type":"DESCRIBES","to":"dataset-ice"},{"from":"concept-station","type":"DESCRIBES","to":"exp-maitri-2023"},
+    {"from":"dataset-carbon","type":"HAS_SOURCE","to":"source-carbon"},{"from":"dataset-ice","type":"HAS_SOURCE","to":"source-ice"},{"from":"dataset-weather","type":"HAS_SOURCE","to":"source-weather"},{"from":"dataset-plastic","type":"HAS_SOURCE","to":"source-plastic"},
+    {"from":"publication-carbon","type":"HAS_SOURCE","to":"source-pub-carbon"},{"from":"publication-ice","type":"HAS_SOURCE","to":"source-pub-ice"},{"from":"publication-plastic","type":"HAS_SOURCE","to":"source-pub-plastic"}
+  ],
+  "synonyms": {
+    "carbon dioxide flux":["co2 flux","carbon flux","carbon exchange"],
+    "sea ice":["ocean ice","seasonal ice"],
+    "microplastics":["microplastic","plastic particles"],
+    "weather":["temperature","wind","pressure","solar radiation"]
+  },
+  "glossary": [
+    {"term":"carbon flux","definition":"The rate at which carbon moves between places such as snow and air."},
+    {"term":"cryosphere","definition":"All parts of Earth where water is frozen."},
+    {"term":"transect","definition":"A fixed route along which researchers repeat observations."},
+    {"term":"microplastic","definition":"A plastic particle smaller than five millimetres."},
+    {"term":"provenance","definition":"A record of where a claim or data item came from."},
+    {"term":"freeboard","definition":"The height of sea ice above the surrounding water."},
+    {"term":"albedo","definition":"The share of incoming light a surface reflects."}
+  ],
+  "myths": [
+    {"claim":"Satellite images prove there are hidden pyramids in Antarctica.","rebuttal":"Mountain peaks called nunataks can form angular shadows. Shape alone is not evidence of a constructed pyramid; field observations and mapped geology provide the testable explanation.","concept":"Antarctic landforms","citation":{"label":"USGS Antarctic geology overview","url":"https://www.usgs.gov/programs/gggsc/science/antarctic-geology","status":"ok","checked_at":"2026-09-28T08:30:00Z","detail":"The institutional landing page resolved; the demo rebuttal is linked to the landform concept node."}},
+    {"claim":"Antarctica is surrounded by a secret ice wall.","rebuttal":"Antarctica is a mapped continent with ice shelves at parts of its coastline. Satellite observations, navigation and long-running research stations independently document its geography.","concept":"Antarctic geography","citation":{"label":"NASA Earth Observatory Antarctica","url":"https://earthobservatory.nasa.gov/world-of-change/iceshelves","status":"ok","checked_at":"2026-09-28T08:30:00Z","detail":"The NASA landing page resolved; the claim is traced to the Antarctic geography concept."}},
+    {"claim":"One cold day in Antarctica disproves global warming.","rebuttal":"Weather describes short-term conditions; climate is a pattern measured over decades. A single local observation cannot establish or overturn a long-term global trend.","concept":"Weather and climate","citation":{"label":"NASA climate evidence","url":"https://science.nasa.gov/climate-change/evidence/","status":"ok","checked_at":"2026-09-28T08:30:00Z","detail":"The NASA evidence page resolved; the distinction is linked to the weather concept and long-term observations."}}
+  ],
+  "linkHealth": [
+    {"id":"link-npdc","label":"National Polar Data Center","url":"https://npdc.ncpor.res.in/","status":"ok","lastCheckedAt":"2026-09-28T08:30:00Z","archivePath":null},
+    {"id":"link-pangaea","label":"PANGAEA Data Publisher","url":"https://www.pangaea.de/","status":"ok","lastCheckedAt":"2026-09-28T08:30:00Z","archivePath":null},
+    {"id":"link-aadc","label":"Australian Antarctic Data Centre","url":"https://data.aad.gov.au/","status":"unverified-offline","lastCheckedAt":null,"archivePath":null},
+    {"id":"link-stale","label":"Illustrative retired NPDC record","url":"https://npdc.ncpor.res.in/old-record-demo","status":"archived-copy-available","lastCheckedAt":"2026-09-28T08:30:00Z","archivePath":"/archives/demo-npdc-record.json","checksum":"sha256:a0b7c0459b46032a4f74155bb06f7b90dce318d445ce7745d5696f5807453c38"}
+  ]
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "link-npdc",
+    "label": "National Polar Data Center",
+    "url": "https://npdc.ncpor.res.in/",
+    "status": "ok",
+    "lastCheckedAt": "2026-09-28T15:37:10+00:00",
+    "archivePath": null
+  },
+  {
+    "id": "link-pangaea",
+    "label": "PANGAEA Data Publisher",
+    "url": "https://www.pangaea.de/",
+    "status": "ok",
+    "lastCheckedAt": "2026-09-28T15:37:11+00:00",
+    "archivePath": null
+  },
+  {
+    "id": "link-aadc",
+    "label": "Australian Antarctic Data Centre",
+    "url": "https://data.aad.gov.au/",
+    "status": "unverified-offline",
+    "lastCheckedAt": "2026-09-28T15:37:14+00:00",
+    "archivePath": null
+  },
+  {
+    "id": "link-stale",
+    "label": "Illustrative retired NPDC record",
+    "url": "https://npdc.ncpor.res.in/old-record-demo",
+    "status": "archived-copy-available",
+    "lastCheckedAt": "2026-09-28T08:30:00Z",
+    "archivePath": "/archives/demo-npdc-record.json",
+    "checksum": "sha256:a0b7c0459b46032a4f74155bb06f7b90dce318d445ce7745d5696f5807453c38"
+  }
+]

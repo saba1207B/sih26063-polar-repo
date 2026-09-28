@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "title": "NCPOR Digital Knowledge Platform",
+    "dataStatus": "Mixed catalogue: institutional context plus clearly marked illustrative demo records",
+    "updatedAt": "2026-09-28",
+    "notice": "Demo measurements, publications and researcher profiles are fictional-but-realistic and are not official NCPOR records."
+  },
+  "datasets": [
+    {
+      "id": "ds-arctic-black-carbon",
+      "slug": "arctic-black-carbon-observations",
+      "entityType": "dataset",
+      "title": "Arctic black carbon observations — demonstration series",
+      "summary": "A compact teaching dataset showing monthly black-carbon concentration, wind speed and air temperature near a demonstration Arctic station.",
+      "plainLanguage": "Black carbon is made of tiny light-absorbing particles. This sample series helps demonstrate how researchers compare particle levels with weather through time.",
+      "region": "Arctic",
+      "station": "Himadri (context label)",
+      "topics": ["black carbon", "aerosols", "atmosphere", "climate"],
+      "years": "2019–2021",
+      "format": ["CSV", "JSON"],
+      "license": "CC BY 4.0 demo pack",
+      "dataStatus": "Illustrative sample values — not an official observation record",
+      "sourceLabel": "Local demonstration record",
+      "sourceUrl": "/datasets/arctic-black-carbon-observations",
+      "citation": "NCPOR Digital Knowledge Platform demo team (2026). Arctic black carbon observations — demonstration series.",
+      "variables": ["month", "black_carbon_ng_m3", "wind_speed_ms", "air_temperature_c"],
+      "rows": [
+        {"month":"2019-06","black_carbon_ng_m3":42,"wind_speed_ms":4.2,"air_temperature_c":2.1},
+        {"month":"2019-07","black_carbon_ng_m3":38,"wind_speed_ms":5.1,"air_temperature_c":4.4},
+        {"month":"2020-06","black_carbon_ng_m3":35,"wind_speed_ms":4.8,"air_temperature_c":1.7},
+        {"month":"2020-07","black_carbon_ng_m3":31,"wind_speed_ms":5.6,"air_temperature_c":3.9},
+        {"month":"2021-06","black_carbon_ng_m3":29,"wind_speed_ms":5.2,"air_temperature_c":2.4},
+        {"month":"2021-07","black_carbon_ng_m3":27,"wind_speed_ms":6.0,"air_temperature_c":4.1}
+      ],
+      "related": ["pub-arctic-aerosol-demo", "researcher-isha-menon", "station-himadri", "project-clean-air-demo"]
+    },
+    {
+      "id": "ds-maitri-weather",
+      "slug": "maitri-summer-weather",
+      "entityType": "dataset",
+      "title": "Maitri summer weather observations",
+      "summary": "A teaching-ready subset of air temperature, pressure and wind observations connected to the existing Maitri expedition story.",
+      "plainLanguage": "A small weather table for learning how Antarctic conditions change across several observation windows.",
+      "region": "Antarctica",
+      "station": "Maitri",
+      "topics": ["weather", "atmosphere", "temperature"],
+      "years": "2023",
+      "format": ["CSV", "JSON"],
+      "license": "CC BY 4.0 demo pack",
+      "dataStatus": "Illustrative sample values — linked to the existing fictional expedition bundle",
+      "sourceLabel": "Existing local graph record",
+      "sourceUrl": "/expeditions/maitri-2023-climate-expedition",
+      "citation": "Polar Commons demo team (2026). Maitri summer weather observations.",
+      "variables": ["day", "air_temperature_c", "pressure_hpa", "wind_speed_ms"],
+      "rows": [
+        {"day":"2023-01-08","air_temperature_c":-2.8,"pressure_hpa":982,"wind_speed_ms":7.1},
+        {"day":"2023-01-09","air_temperature_c":-1.9,"pressure_hpa":979,"wind_speed_ms":8.4},
+        {"day":"2023-01-10","air_temperature_c":-3.4,"pressure_hpa":985,"wind_speed_ms":6.3},
+        {"day":"2023-01-11","air_temperature_c":-2.1,"pressure_hpa":987,"wind_speed_ms":5.9}
+      ],
+      "related": ["maitri-2023-climate-expedition", "station-maitri", "pub-maitri-weather-demo"]
+    },
+    {
+      "id": "ds-bharati-ocean",
+      "slug": "bharati-coastal-ocean-profile",
+      "entityType": "dataset",
+      "title": "Bharati coastal ocean profile — demonstration dataset",
+      "summary": "A small depth profile for exploring temperature and salinity relationships in a polar coastal setting.",
+      "plainLanguage": "This sample shows how seawater temperature and salt content can be compared at increasing depth.",
+      "region": "Antarctica",
+      "station": "Bharati (context label)",
+      "topics": ["ocean", "salinity", "temperature"],
+      "years": "2022",
+      "format": ["CSV", "JSON"],
+      "license": "CC BY 4.0 demo pack",
+      "dataStatus": "Illustrative sample values — not an official observation record",
+      "sourceLabel": "Local demonstration record",
+      "sourceUrl": "/datasets/bharati-coastal-ocean-profile",
+      "citation": "NCPOR Digital Knowledge Platform demo team (2026). Bharati coastal ocean profile.",
+      "variables": ["depth_m", "temperature_c", "salinity_psu"],
+      "rows": [
+        {"depth_m":0,"temperature_c":-0.8,"salinity_psu":33.4},
+        {"depth_m":25,"temperature_c":-1.1,"salinity_psu":33.7},
+        {"depth_m":50,"temperature_c":-1.4,"salinity_psu":34.0},
+        {"depth_m":100,"temperature_c":-1.6,"salinity_psu":34.2}
+      ],
+      "related": ["station-bharati", "researcher-neel-kapoor"]
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub-arctic-aerosol-demo",
+      "slug": "interpreting-arctic-black-carbon-demo",
+      "entityType": "publication",
+      "title": "Interpreting seasonal black-carbon signals in the Arctic: a demonstration brief",
+      "summary": "A fictional methods brief created to demonstrate evidence-linked publication discovery and cautious trend interpretation.",
+      "abstract": "The brief compares a compact illustrative black-carbon series with wind and temperature. It demonstrates correlation-oriented exploration but does not make a scientific finding.",
+      "authors": ["Dr Isha Menon", "Dr Neel Kapoor"],
+      "year": 2024,
+      "topics": ["black carbon", "aerosols", "Arctic"],
+      "license": "CC BY 4.0 demo pack",
+      "dataStatus": "Illustrative publication — not peer reviewed and not an official NCPOR output",
+      "sourceLabel": "Local demonstration publication",
+      "sourceUrl": "/publications/interpreting-arctic-black-carbon-demo",
+      "citation": "Menon, I. & Kapoor, N. (2024). Interpreting seasonal black-carbon signals in the Arctic: a demonstration brief.",
+      "related": ["ds-arctic-black-carbon", "researcher-isha-menon", "researcher-neel-kapoor", "station-himadri"]
+    },
+    {
+      "id": "pub-maitri-weather-demo",
+      "slug": "maitri-weather-context-demo",
+      "entityType": "publication",
+      "title": "Weather context for a connected Maitri field story",
+      "summary": "A demonstration note connecting weather observations, field activities and the existing expedition narrative.",
+      "abstract": "This fictional note illustrates how a knowledge graph can connect an expedition, place, dataset and explanatory story.",
+      "authors": ["Dr Ananya Rao"],
+      "year": 2024,
+      "topics": ["weather", "Antarctica", "knowledge graph"],
+      "license": "CC BY 4.0 demo pack",
+      "dataStatus": "Illustrative publication — not peer reviewed and not an official NCPOR output",
+      "sourceLabel": "Existing local expedition bundle",
+      "sourceUrl": "/expeditions/maitri-2023-climate-expedition",
+      "citation": "Rao, A. (2024). Weather context for a connected Maitri field story.",
+      "related": ["ds-maitri-weather", "maitri-2023-climate-expedition", "station-maitri"]
+    }
+  ],
+  "researchers": [
+    {
+      "id": "researcher-isha-menon",
+      "slug": "isha-menon-demo",
+      "entityType": "researcher",
+      "name": "Dr Isha Menon",
+      "title": "Atmospheric scientist (demonstration profile)",
+      "summary": "A fictional profile used to demonstrate expertise, collaboration and research-output connections.",
+      "topics": ["black carbon", "aerosols", "Arctic atmosphere"],
+      "dataStatus": "Fictional demonstration person — not an NCPOR staff record",
+      "related": ["pub-arctic-aerosol-demo", "ds-arctic-black-carbon", "project-clean-air-demo"]
+    },
+    {
+      "id": "researcher-neel-kapoor",
+      "slug": "neel-kapoor-demo",
+      "entityType": "researcher",
+      "name": "Dr Neel Kapoor",
+      "title": "Polar oceanographer (demonstration profile)",
+      "summary": "A fictional profile illustrating cross-domain connections between the atmosphere and ocean.",
+      "topics": ["polar ocean", "salinity", "climate interactions"],
+      "dataStatus": "Fictional demonstration person — not an NCPOR staff record",
+      "related": ["pub-arctic-aerosol-demo", "ds-bharati-ocean"]
+    }
+  ],
+  "stations": [
+    {
+      "id": "station-maitri",
+      "slug": "maitri",
+      "entityType": "station",
+      "name": "Maitri",
+      "summary": "Indian Antarctic research station represented here as an institutional context node; linked research records in this prototype are illustrative.",
+      "region": "Antarctica",
+      "latitude": -70.7667,
+      "longitude": 11.7300,
+      "status": "Context record",
+      "dataStatus": "Real station name and approximate map context; connected demo research is illustrative",
+      "related": ["maitri-2023-climate-expedition", "ds-maitri-weather", "pub-maitri-weather-demo"]
+    },
+    {
+      "id": "station-bharati",
+      "slug": "bharati",
+      "entityType": "station",
+      "name": "Bharati",
+      "summary": "Indian Antarctic research station represented as a context node for demonstrating place-based discovery.",
+      "region": "Antarctica",
+      "latitude": -69.4070,
+      "longitude": 76.1880,
+      "status": "Context record",
+      "dataStatus": "Real station name and approximate map context; connected demo research is illustrative",
+      "related": ["ds-bharati-ocean", "researcher-neel-kapoor"]
+    },
+    {
+      "id": "station-himadri",
+      "slug": "himadri",
+      "entityType": "station",
+      "name": "Himadri",
+      "summary": "Indian Arctic research station represented as a context node for demonstrating cross-polar discovery.",
+      "region": "Arctic",
+      "latitude": 78.9176,
+      "longitude": 11.9307,
+      "status": "Context record",
+      "dataStatus": "Real station name and approximate map context; connected demo research is illustrative",
+      "related": ["ds-arctic-black-carbon", "pub-arctic-aerosol-demo", "project-clean-air-demo"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-clean-air-demo",
+      "slug": "clean-polar-air-demo",
+      "entityType": "project",
+      "title": "Clean Polar Air connections — demonstration project",
+      "summary": "A fictional cross-polar project node used to connect datasets, people, stations and publications.",
+      "topics": ["black carbon", "atmosphere", "cross-polar comparison"],
+      "dataStatus": "Illustrative project — not an official programme",
+      "related": ["ds-arctic-black-carbon", "pub-arctic-aerosol-demo", "researcher-isha-menon", "station-himadri"]
+    }
+  ],
+  "expeditions": [
+    {
+      "id": "maitri-2023-climate-expedition",
+      "slug": "maitri-2023-climate-expedition",
+      "entityType": "expedition",
+      "title": "Maitri 2023 Climate Connections Expedition",
+      "summary": "The existing story-led illustrative expedition connecting air, ice, freshwater and weather records.",
+      "region": "Antarctica",
+      "year": 2023,
+      "dataStatus": "Illustrative expedition record",
+      "related": ["station-maitri", "ds-maitri-weather", "pub-maitri-weather-demo"]
+    }
+  ],
+  "topics": [
+    {"id":"topic-black-carbon","slug":"black-carbon","entityType":"topic","title":"Black carbon","summary":"Light-absorbing carbonaceous particles explored here through a demonstration Arctic bundle.","related":["ds-arctic-black-carbon","pub-arctic-aerosol-demo","researcher-isha-menon"]},
+    {"id":"topic-polar-weather","slug":"polar-weather","entityType":"topic","title":"Polar weather","summary":"Temperature, pressure and wind observations connected to stations and expeditions.","related":["ds-maitri-weather","pub-maitri-weather-demo","station-maitri"]},
+    {"id":"topic-polar-ocean","slug":"polar-ocean","entityType":"topic","title":"Polar ocean","summary":"Temperature and salinity relationships in polar coastal waters.","related":["ds-bharati-ocean","researcher-neel-kapoor","station-bharati"]}
+  ],
+  "timeline": [
+    {"year":1981,"title":"Indian Antarctic expeditions begin","summary":"Historical context milestone. Verify against official programme records before production publication.","status":"context-pending-production-verification"},
+    {"year":1989,"title":"Maitri context milestone","summary":"Station milestone shown for discovery context; this prototype does not serve as an authoritative chronology.","status":"context-pending-production-verification"},
+    {"year":2008,"title":"Himadri context milestone","summary":"Arctic station milestone shown for discovery context.","status":"context-pending-production-verification"},
+    {"year":2012,"title":"Bharati context milestone","summary":"Antarctic station milestone shown for discovery context.","status":"context-pending-production-verification"},
+    {"year":2026,"title":"Knowledge platform prototype","summary":"Evidence-linked local demo joining search, graph, data, publications and outreach journeys.","status":"verified-local-prototype"}
+  ]
+}

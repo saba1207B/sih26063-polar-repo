@@ -1,26 +1,418 @@
 @import "tailwindcss";
 
+/* ============================================
+   COASTAL & POLAR SCIENCE — WATERCOLOR OCEAN & GOLDEN SAND THEME
+   Inspired by: Coastal watercolor painting (Azure Sky, Turquoise Waves, Seafoam Froth, Golden Shore)
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Coastal Watercolor Palette Extracted Directly From Artwork */
+  --color-white: #FFFFFF;
+  --color-snow: #F8FCFD;
+  --color-seafoam-light: #F0FDFA;
+  --color-seafoam: #E0F7FA;
+  --color-azure-sky: #E0F2FE;
+  --color-sand-light: #FEF3C7;
+  --color-sand-gold: #E5983A;
+  --color-sand-amber: #D97706;
+
+  /* Marine Wave & Typography Tones */
+  --color-ocean-wave: #0C5A66;
+  --color-ocean-depth: #073842;
+  --color-polar-navy: #092B34;
+  --color-deep-ocean: #064E5B;
+  --color-slate-dark: #0A2B33;
+  --color-slate-body: #1E3E47;
+  --color-slate-muted: #527982;
+  --color-slate-light: #8BA8AF;
+
+  /* Brand Accents */
+  --color-turquoise: #0891B2;
+  --color-ocean-cyan: #0284C7;
+  --color-sea-teal: #0D9488;
+  --color-sand-accent: #F59E0B;
+
+  --color-border: rgba(8, 145, 178, 0.22);
+  --color-border-subtle: rgba(204, 251, 241, 0.90);
+  --color-border-sand: rgba(245, 158, 11, 0.28);
+  --color-border-dark: rgba(7, 56, 66, 0.16);
+
+  /* Semantic */
+  --background: #F8FCFD;
+  --foreground: #0A2B33;
+
+  /* Spacing */
+  --section-padding: clamp(4rem, 10vh, 8rem);
+  --container-max: 1440px;
 }
+
+/* ============================================
+   TAILWIND THEME EXTENSION
+   ============================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-white: #FFFFFF;
+  --color-snow: #F8FCFD;
+  --color-seafoam-light: #F0FDFA;
+  --color-seafoam: #E0F7FA;
+  --color-azure-sky: #E0F2FE;
+  --color-sand-light: #FEF3C7;
+  --color-sand-gold: #E5983A;
+  --color-sand-amber: #D97706;
+  --color-black: #0A2B33;
+  --color-polar-navy: #092B34;
+  --color-deep-ocean: #064E5B;
+  --color-ocean-wave: #0C5A66;
+  --color-dark: #0A2B33;
+  --color-secondary: #335964;
+  --color-muted: #527982;
+  --color-polar-night: #073842;
+  --color-glacier-blue: #0284C7;
+  --color-polar-blue: #0369A1;
+  --color-turquoise: #0891B2;
+  --color-teal: #0D9488;
+  --color-sand: #F59E0B;
+  --color-sand-warm: #E5983A;
+  --color-border-subtle: rgba(8, 145, 178, 0.20);
+  --color-border-dark-subtle: rgba(7, 56, 66, 0.14);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================================
+   BASE STYLES & ACCESSIBILITY
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  body {
+    background-color: #F8FCFD;
+    color: #1E3E47;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    letter-spacing: -0.015em;
+    position: relative;
+  }
+
+  /* Antarctic aerial iceberg atmospheric wash (Clear Sky Mist -> Glacial Turquoise -> Deep Sapphire Ocean) */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: 
+      linear-gradient(180deg, rgba(240, 249, 255, 0.45) 0%, rgba(6, 182, 212, 0.22) 45%, rgba(10, 37, 64, 0.55) 100%),
+      url('/images/antarctic-iceberg-aerial.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    pointer-events: none;
+    transform: translateZ(0);
+  }
+
+  /* Typography Hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    color: #0A2B33;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  p {
+    color: #1E3E47;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+::selection {
+  background: #0891B2;
+  color: #FFFFFF;
 }
+
+/* Accessible Focus Visible Indicator (WCAG 2.1 AA) */
+:focus-visible {
+  outline: 2px solid #0891B2 !important;
+  outline-offset: 3px !important;
+  border-radius: inherit;
+}
+
+/* Skip to Content Link */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: #0891B2;
+  color: #FFFFFF;
+  border: 1px solid #064E5B;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: top 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+
+.heading-display {
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.heading-section {
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.0;
+}
+
+.text-editorial-meta {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+/* ============================================
+   FROSTED GLASS PANELS & WINDOW STRUCTURE
+   ============================================ */
+
+/* Crisp Frosted Glass Panel with Seafoam-Turquoise Trim & High-Legibility */
+.editorial-panel-light,
+.frosted-glass-panel,
+.editorial-panel-transparent {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(8, 145, 178, 0.20);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px -2px rgba(6, 78, 91, 0.06), 0 2px 6px -1px rgba(6, 78, 91, 0.03);
+  color: #1E3E47;
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-panel-light:hover,
+.frosted-glass-panel:hover,
+.editorial-panel-transparent:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(8, 145, 178, 0.40);
+  box-shadow: 0 12px 32px -4px rgba(8, 145, 178, 0.16), 0 4px 12px -2px rgba(6, 78, 91, 0.05);
+}
+
+/* Institutional Contrast Dark Panel (Used selectively for contrast/hero) */
+.editorial-panel-dark {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(8, 145, 178, 0.22);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px -2px rgba(6, 78, 91, 0.06);
+  color: #1E3E47;
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-panel-dark:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(8, 145, 178, 0.45);
+  box-shadow: 0 12px 32px -4px rgba(8, 145, 178, 0.18);
+}
+
+.glass-subtle {
+  background: rgba(240, 253, 250, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(8, 145, 178, 0.22);
+  color: #0891B2;
+}
+
+/* ============================================
+   IMAGE SYSTEM & MEDIA CURVED CORNERS
+   ============================================ */
+
+img,
+video,
+iframe {
+  border-radius: 1.25rem;
+}
+
+.editorial-image-container {
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.editorial-image {
+  border-radius: inherit;
+  filter: grayscale(0%);
+  transform: scale(1);
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), filter 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-image:hover,
+a:hover .editorial-image,
+.editorial-panel-dark:hover .editorial-image {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   SUBTLE SNOWFALL PARTICLES
+   ============================================ */
+
+@keyframes snow-fall {
+  0% { transform: translateY(-40px); }
+  100% { transform: translateY(105vh); }
+}
+
+@keyframes snow-drift-spin {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(var(--drift-x, 25px)) rotate(var(--spin-mid, 180deg));
+  }
+  100% {
+    transform: translateX(0) rotate(var(--spin-end, 360deg));
+  }
+}
+
+.snow-fall-wrapper {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+.snow-flake {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+.snow-flake svg {
+  color: rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0 1px 3px rgba(2, 132, 199, 0.35));
+}
+
+/* ============================================
+   ANIMATION & TRANSITIONS
+   ============================================ */
+
+.transition-editorial {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 500ms;
+}
+
+.ease-editorial {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.page-enter {
+  animation: page-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  .editorial-image {
+    transition: none !important;
+  }
+  
+  .editorial-image:hover,
+  a:hover .editorial-image,
+  .editorial-panel-dark:hover .editorial-image {
+    transform: none !important;
+  }
+
+  .page-enter {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .snow-particle {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   SCROLLBAR — OCEAN WAVE TO GOLDEN SAND GRADIENT
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0FDFA;
+  border-left: 1px solid rgba(8, 145, 178, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0891B2 0%, #0D9488 45%, #E5983A 100%);
+  border-radius: 9999px;
+  border: 2px solid #F0FDFA;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0C5A66 0%, #0B4F5B 45%, #D97706 100%);
+}
+

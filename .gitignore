@@ -30,8 +30,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (prevent committing private credentials)
 .env*
+!.env.example
+!backend/.env.example
 
 # vercel
 .vercel
@@ -39,3 +41,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python & Backend
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/.venv/
+backend/venv/
+.venv/
+venv/
+ENV/
+env/
+backend/data/*.db
+backend/data/analytics.db
+*.db
+backend/.pytest_cache/
+.pytest_cache/
