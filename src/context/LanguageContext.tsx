@@ -90,8 +90,8 @@ const translations: Record<string, { EN: string; HI: string }> = {
     HI: 'ध्रुवीय विज्ञान खोजें →',
   },
   hero_cta_assistant: {
-    EN: 'ASK RESEARCH ASSISTANT',
-    HI: 'शोध सहायक से पूछें (AI)',
+    EN: 'ASK AI ASSISTANT',
+    HI: 'एआई सहायक से पूछें',
   },
   hero_cta_expeditions: {
     EN: 'View 42 Expeditions →',

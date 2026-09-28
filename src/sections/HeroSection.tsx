@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui";
+import { Sparkles } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 /**
@@ -171,8 +172,15 @@ export function HeroSection() {
                 </Button>
               </Link>
               <Link href="/assistant">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto bg-white/20 hover:bg-white text-white hover:text-[#0A2B33] border-white/50 shadow-md text-xs font-bold tracking-wider">
-                  {t('hero_cta_assistant', 'ASK RESEARCH ASSISTANT')}
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto bg-white/95 hover:bg-white text-[#0284C7] hover:text-[#003B6D] border-2 border-[#0284C7]/50 hover:border-[#0284C7] shadow-lg text-xs font-extrabold tracking-wider transition-all duration-200"
+                >
+                  <Sparkles size={16} className="text-[#0284C7] shrink-0" />
+                  <span className="text-[#0284C7] hover:text-[#003B6D] font-extrabold">
+                    {t('hero_cta_assistant', 'ASK AI ASSISTANT')}
+                  </span>
                 </Button>
               </Link>
               <Link href="/expeditions" className="sm:ml-auto">
