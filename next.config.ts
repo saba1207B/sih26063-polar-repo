@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
+const isGithubActions =
+  process.env.GITHUB_ACTIONS?.trim() === 'true' ||
+  process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
   ...(isGithubActions
@@ -9,7 +11,8 @@ const nextConfig: NextConfig = {
         basePath: '/sih26063-polar-repo',
         trailingSlash: true,
         images: {
-          unoptimized: true,
+          loader: 'custom',
+          loaderFile: './src/lib/imageLoader.ts',
         },
       }
     : {

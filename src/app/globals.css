@@ -113,8 +113,7 @@ html {
     inset: 0;
     z-index: -1;
     background-image: 
-      linear-gradient(180deg, rgba(240, 249, 255, 0.45) 0%, rgba(6, 182, 212, 0.22) 45%, rgba(10, 37, 64, 0.55) 100%),
-      url('/images/antarctic-iceberg-aerial.png');
+      linear-gradient(180deg, rgba(240, 249, 255, 0.45) 0%, rgba(6, 182, 212, 0.22) 45%, rgba(10, 37, 64, 0.55) 100%);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
